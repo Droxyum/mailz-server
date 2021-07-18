@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import * as bp from 'body-parser';
 import helmet from 'helmet';
-import { rulesController } from './controllers/rules.controllers';
+import { rulesController } from './controllers/rules.controller';
 
 export const createApi = () => {
     const listenPort = Number(process.env.HTTP_PORT) || 80;
