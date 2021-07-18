@@ -1,14 +1,14 @@
 import { PrismaClient } from '@prisma/client';
-import { Request } from 'express';
-
-export interface BodyRequest<T extends unknown> extends Request {
-    body: T;
-}
-
-export const prisma = new PrismaClient();
+import { Request as ExpressRequest } from 'express';
 
 export type ContextType = 'USER' | 'BACKEND';
 export interface Context {
     type: ContextType;
     userId: string;
 }
+
+export interface AuthedRequest extends ExpressRequest {
+    context: Context;
+}
+
+export const prisma = new PrismaClient();
