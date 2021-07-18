@@ -1,6 +1,7 @@
-## Todo
-[ ] Auth / register
-[ ] Auth / login
-[ ] Auth / 2FA
-[ ] Mailbox / Create mailbox / Credentials encryption
-[ ] Rules / Create rules set
+# Custom antispam
+# Todo
+- [ ] Auth / register
+- [ ] Auth / login
+- [ ] Auth / 2FA
+- [ ] Mailbox / Create mailbox / Credentials encryption
+- [ ] Rules / Create rules set
