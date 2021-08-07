@@ -35,8 +35,17 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@packages/*": [
-        "./src/packages/*/index.ts"
+      "@packages/api": [
+        "./src/packages/api/index.ts"
+      ],
+      "@packages/mail": [
+        "./src/packages/mail/index.ts"
+      ],
+      "@packages/operators": [
+        "./src/packages/operators/index.ts"
+      ],
+      "@packages/spam": [
+        "./src/packages/spam/index.ts"
       ]
     }
   }

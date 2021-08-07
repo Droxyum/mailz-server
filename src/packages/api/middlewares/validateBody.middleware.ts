@@ -9,6 +9,7 @@ export const validateBody = (schema: joi.Schema) => {
                 .status(400)
                 .send({ errors: (error?.details || []).map((e) => e.message) });
         }
+        req.body = value;
         return next();
     };
 };

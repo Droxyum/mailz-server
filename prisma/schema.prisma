@@ -8,8 +8,23 @@ generator client {
 }
 
 model User {
-  id      Int      @id @default(autoincrement())
-  email String @unique
-  password String
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  password  String
+  createdAt DateTime  @default(now())
+  mailboxes Mailbox[]
+}
+
+model Mailbox {
+  id        Int      @id @default(autoincrement())
+  name      String
+  host      String
+  port      Int
+  secure    Boolean
+  email     String
+  password  String
   createdAt DateTime @default(now())
+  iv        String
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
 }

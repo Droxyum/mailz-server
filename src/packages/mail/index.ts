@@ -25,7 +25,10 @@ class MailBox {
                     authTimeout: 3000,
                 },
             })
-            .then((conn) => (this.connection = conn))
+            .then((conn) => {
+                this.connection = conn;
+                return this;
+            })
             .catch((e) => {
                 console.log(e);
                 throw new Error('Cannot connect to mailbox');

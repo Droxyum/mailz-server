@@ -4,6 +4,7 @@ import * as bp from 'body-parser';
 import helmet from 'helmet';
 import { rulesController } from './controllers/rules.controller';
 import { authController } from './controllers/auth.controller';
+import { mailboxesController } from './controllers/mailboxes.controller';
 
 export const createApi = () => {
     const listenPort = Number(process.env.HTTP_PORT) || 80;
@@ -16,6 +17,7 @@ export const createApi = () => {
 
     server.use('/rules', rulesController());
     server.use('/auth', authController());
+    server.use('/mailboxes', mailboxesController());
 
     return server;
 };

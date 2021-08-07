@@ -4,7 +4,7 @@ import { Request as ExpressRequest } from 'express';
 export type ContextType = 'USER' | 'BACKEND';
 export interface Context {
     type: ContextType;
-    userId: string;
+    userId: number;
 }
 
 export interface AuthedRequest extends ExpressRequest {

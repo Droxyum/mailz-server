@@ -10,6 +10,7 @@ module.exports = {
     entry: './src/index.ts',
     externals: [nodeExternals()],
     plugins: [new Dotenv(), new NodemonPlugin()],
+    devtool: 'eval',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.js',

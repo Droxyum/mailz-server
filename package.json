@@ -43,6 +43,7 @@
     "express": "^4.17.1",
     "fs": "^0.0.1-security",
     "helmet": "^4.6.0",
+    "http-status-codes": "^2.1.4",
     "imap-simple": "^5.1.0",
     "joi": "^17.4.1",
     "jsonwebtoken": "^8.5.1",

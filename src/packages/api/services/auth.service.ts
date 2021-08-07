@@ -4,11 +4,12 @@ import { Context, ContextType, prisma } from '../models';
 
 interface JwtTokenExtracted extends JwtPayload {
     type: ContextType;
-    userId: string;
+    userId: number;
 }
 
 const encodeToken = (context: Context) =>
     jwt.sign(context, process.env.JWT_SECRET);
+
 const decodeToken = (token: string): Context => {
     try {
         const data = <JwtTokenExtracted>(
@@ -58,7 +59,7 @@ const login = async (data: { email: string; password: string }) => {
     try {
         const token = encodeToken({
             type: 'USER',
-            userId: user.id.toString(),
+            userId: user.id,
         });
         return token;
     } catch (e) {
@@ -68,6 +69,7 @@ const login = async (data: { email: string; password: string }) => {
 
 export const authService = {
     encodePassword,
+    decodeToken,
     isSamePassword,
     register,
     login,
